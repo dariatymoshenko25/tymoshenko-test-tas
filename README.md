@@ -1,9 +1,10 @@
 ## Getting Started:
-1. Build and start containers: docker compose up -d --build app
-2. Build frontend assets: docker compose exec vite npm run build
-3. Run migrations: docker compose exec app php artisan migrate
-4. Create storage symlink: docker compose exec app php artisan storage:link
-5. Access the application: http://localhost:8000
+1. Copy environment file : cp .env.example .env
+2. Build and start containers: docker compose up -d --build app
+3. Build frontend assets: docker compose exec vite npm run build
+4. Run migrations: docker compose exec app php artisan migrate
+5. Create storage symlink: docker compose exec app php artisan storage:link
+6. Access the application: http://localhost:8000
 ## Important:
 Only files strictly less than 10MB are considered valid for upload. Files with a size of 10MB or greater are not accepted and are considered out of scope for this task.
 ## Possible Improvements
