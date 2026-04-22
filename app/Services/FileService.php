@@ -18,7 +18,7 @@ class FileService
             'path'          => $path,
             'mime_type'     => $file->getMimeType(),
             'size'          => $file->getSize(),
-            'expires_at'    => now()->addMinute(),//now()->addHours(24),
+            'expires_at'    => now()->addHours(24),
         ]);
     }
 
