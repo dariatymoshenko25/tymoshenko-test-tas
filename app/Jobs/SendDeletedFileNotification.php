@@ -31,20 +31,7 @@ class SendDeletedFileNotification implements ShouldQueue
      */
     public function handle(): void
     {
-        $context = [
-            'fileName' => $this->fileName,
-            'emailTo'  => $this->emailTo,
-        ];
-
-        // Добавляем ID и попытки, только если джоб запущен через воркера
-        if ($this->job) {
-            $context['job_id'] = $this->job->getJobId();
-            $context['attempts'] = $this->attempts();
-        } else {
-            $context['warning'] = 'Job executed synchronously (no queue worker context)';
-        }
         //sending emails
-        \Log::info("Processing: {$this->fileName}", $context);
 
         \Log::info("Email notification sent: {$this->fileName} → {$this->emailTo}");
     }
